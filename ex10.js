@@ -3,3 +3,11 @@
 // Example: convertToCamelCase("hello_world") should return "helloWorld".
 
 console.log(convertToCamelCase("hello_world")); // Expected output: "helloWorld"
+
+function convertToCamelCase(snakedText) {
+  return snakedText
+    .toLowerCase()
+    .replace(/([　_][a-z])/g, (group) =>
+      group.toUpperCase().replace(" ", "").replace("_", "")
+    );
+}

@@ -4,3 +4,13 @@
 // should return { search: "test", page: "2" }.
 
 console.log(getQueryParams("https://example.com?search=test&page=2")); // Expected output: { search: "test", page: "2" }
+
+function getQueryParams(stringURL) {
+  const urlObject = {};
+  const url = new URL(stringURL);
+  url.searchParams.forEach((value, key) => {
+    urlObject[key] = value;
+  });
+
+  return urlObject;
+}

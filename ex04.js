@@ -3,3 +3,19 @@
 // Example: mostFrequentChar("javascript") should return "a".
 
 console.log(mostFrequentChar("javascript")); // Expected output: "a"
+
+function mostFrequentChar(text) {
+  const charArray = text.split("");
+  const charObj = {};
+  let largestCountedChar = "";
+  for (let i = 0; i <= charArray.length; i++) {
+    if (!Object.keys(charObj).includes(charArray[i])) {
+      charObj[charArray[i]] = 1;
+    } else {
+      charObj[charArray[i]]++;
+      largestCountedChar = charArray[i];
+    }
+  }
+
+  return largestCountedChar;
+}
